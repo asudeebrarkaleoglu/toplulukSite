@@ -379,6 +379,11 @@ footer hr {
     justify-content: center;
 }
 
+.kaydir-btn:hover {
+  background-color: rgba(15, 75, 195, 0.6);
+}
+
+
 #sol-kaydir {
     left: -60px;
 }
