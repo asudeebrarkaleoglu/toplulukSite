@@ -25,8 +25,11 @@ const maviButonlar = document.querySelectorAll('.btn-mavi');
 const devamButonlar = document.querySelectorAll('.btn-devam');
 const popupDetay = document.getElementById('popup-detay');
 const popupIletisim = document.getElementById('popup-iletisim');
+let popupSSS = document.getElementById('popup-sss');
+let btnSSS = document.getElementById('btn-sss');
 const carpilar = document.querySelectorAll('.fa-times');
 let aktifFiltre = "";
+let sorularSSS = document.querySelectorAll('.sss-soru');
 
 sagButon.addEventListener('click', function() {
     konteyner.scrollLeft += 330;
@@ -147,6 +150,7 @@ carpilar.forEach(button => {
     event.preventDefault();
     popupDetay.style.display = 'none';
     popupIletisim.style.display = 'none';
+    popupSSS.style.display = 'none';
     }
 });
 popupDetay.onclick = (event) => {
@@ -159,3 +163,35 @@ popupIletisim.onclick = (event) => {
         popupIletisim.style.display = 'none';
     }
 }
+
+// Sıkça Sorulan Sorular
+
+btnSSS.onclick = (event) => {
+    event.preventDefault();
+    popupSSS.style.display = 'flex'
+}
+popupSSS.onclick = (event) => {
+    if (event.target === popupSSS) {
+        popupSSS.style.display = 'none';
+    }
+}
+
+sorularSSS.forEach(soru => {
+soru.onclick = function() {
+    let anaKutu = this.parentElement;
+    let suAnAcikMi = anaKutu.classList.contains('acik');
+    document.querySelectorAll('.sss-sorucevap').forEach(kutu => {
+        kutu.classList.remove('acik');
+        let ikon = kutu.querySelector('i');
+        ikon.classList.remove('fa-minus');
+        ikon.classList.add('fa-plus');
+    });
+    if (!suAnAcikMi) {
+        anaKutu.classList.add('acik');
+        let kendiIkonum = this.querySelector('i');
+        kendiIkonum.classList.remove('fa-plus');
+        kendiIkonum.classList.add('fa-minus');
+
+    }
+}
+})
