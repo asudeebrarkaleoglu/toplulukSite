@@ -178,9 +178,20 @@ popupSSS.onclick = (event) => {
 
 sorularSSS.forEach(soru => {
 soru.onclick = function() {
-this.parentElement.classList.toggle('acik');
-let ikon = this.querySelector('i');
-ikon.classList.toggle('fa-plus');
-ikon.classList.toggle('fa-minus');
+    let anaKutu = this.parentElement;
+    let suAnAcikMi = anaKutu.classList.contains('acik');
+    document.querySelectorAll('.sss-sorucevap').forEach(kutu => {
+        kutu.classList.remove('acik');
+        let ikon = kutu.querySelector('i');
+        ikon.classList.remove('fa-minus');
+        ikon.classList.add('fa-plus');
+    });
+    if (!suAnAcikMi) {
+        anaKutu.classList.add('acik');
+        let kendiIkonum = this.querySelector('i');
+        kendiIkonum.classList.remove('fa-plus');
+        kendiIkonum.classList.add('fa-minus');
+
+    }
 }
 })
