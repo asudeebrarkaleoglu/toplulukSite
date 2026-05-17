@@ -653,6 +653,9 @@ html.aydinlik .hero-sol p {
     font-weight: bold;
     justify-content: space-between;
 }
+.sss-soru:hover {
+    color: #94a3b8;
+}
 .sss-cevap {
     display: none;
     color: #94a3b8;
@@ -660,4 +663,25 @@ html.aydinlik .hero-sol p {
 }
 .sss-sorucevap.acik .sss-cevap{
     display: block;
+}
+.sss-sosyalmedya {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+.sss-sosyalmedya a {
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sss-sosyalmedya a:hover {
+    color: #0f4bc3;
+}
+.popup-kutu.aydinlik .sss-sorucevap {
+    border-bottom: 1px solid #cbd5e1;
+}
+.popup-kutu.aydinlik .sss-cevap {
+    color: #475569;
 }
