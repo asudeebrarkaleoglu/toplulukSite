@@ -322,6 +322,10 @@ footer hr {
     cursor: pointer;
 }
 
+.btn-devam:hover {
+    background-color: #055b53;
+}
+
 .btn-pasif {
     background-color: #475569;
     cursor: not-allowed;
